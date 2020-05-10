@@ -1,0 +1,10 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: ctfhub/base_web_nodejs_pm2
+    restart: always
+    ports:
+      - "8085:80"
+    environment:
+      - FLAG=ctfhub{base_web_nodejs_pm2}
