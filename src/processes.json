@@ -10,7 +10,7 @@
             "pid_file": "/var/run/node_web.pid",
             "instances": 1,
             "min_uptime": "60s",
-            "cron": "*/2 * * * *",
+            "cron_restart": "*/2 * * * *",
             "merge_logs": true,
             "exec_interpreter": "node",
             "exec_mode": "cluster",
