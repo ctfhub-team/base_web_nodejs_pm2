@@ -22,6 +22,7 @@ RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.lis
 # RUN yarn add express
 COPY src /home/node
 COPY _files/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY _files/flag.sh /flag.sh
 
 WORKDIR /home/node/src
 

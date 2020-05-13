@@ -9,10 +9,11 @@
             "out_file": "../logs/stdout.log",
             "pid_file": "/var/run/node_web.pid",
             "instances": 1,
-            "min_uptime": "200s",
+            "min_uptime": "60s",
+            "cron": "*/2 * * * *",
             "merge_logs": true,
             "exec_interpreter": "node",
-            "exec_mode": "fork",
+            "exec_mode": "cluster",
             "autorestart": true,
             "vizion": false
         }

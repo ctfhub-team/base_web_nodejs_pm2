@@ -9,4 +9,4 @@ fi
 echo "Running..."
 pm2 start /home/node/processes.json
 
-tail -F ../logs/*.log
+tail -F /home/node/logs/*.log
