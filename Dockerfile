@@ -2,9 +2,7 @@ FROM node:12-stretch-slim
 
 LABEL Organization="CTFHUB" Author="Virink <virink@outlook.com>"
 
-ENV LANG="C.UTF-8" PUPPETEER_SKIP_CHROMIUM_DOWNLOA=true
-
-# COPY _files/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+ENV LANG="C.UTF-8"
 
 RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list && \
     sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list && \
@@ -20,9 +18,12 @@ RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.lis
     rm -rf /tmp/*;
 
 # RUN yarn add express
-COPY src /home/node
-COPY _files/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-COPY _files/flag.sh /flag.sh
+COPY src /home/node/src
+COPY _files /tmp/
+
+RUN mv /tmp/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh && \
+    mv /tmp/flag.sh /flag.sh && \
+    mv /tmp/processes.json /home/node/processes.json
 
 WORKDIR /home/node/src
 

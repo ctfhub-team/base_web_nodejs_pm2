@@ -7,8 +7,4 @@ if [[ -f /flag.sh ]]; then
 fi
 
 echo "Running..."
-pm2 start /home/node/processes.json
-
-sleep 10s
-
-tail -F /home/node/logs/*.log
+pm2-runtime /home/node/processes.json

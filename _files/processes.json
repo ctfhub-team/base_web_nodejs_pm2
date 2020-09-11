@@ -5,8 +5,6 @@
             "cwd": "/home/node/src",
             "script": "/home/node/src/app.js",
             "log_date_format": "YYYY-MM-DD HH:mm",
-            "error_file": "../logs/stderr.log",
-            "out_file": "../logs/stdout.log",
             "pid_file": "/var/run/node_web.pid",
             "instances": 1,
             "min_uptime": "60s",
